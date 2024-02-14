@@ -41,6 +41,11 @@ int main()
 
     srand(time(NULL));
 
+    int dy = 0;
+    int dx = 0;
+
+    halfdelay(4);
+
     while (1)
     {
         mvaddstr(y, x, temp);
@@ -53,20 +58,32 @@ int main()
 
         if (code == 119) // w
         { 
-            --y;
+            //--y;
+            dy = -1;
+            dx = 0;
+
         }
         else if (code == 97) // a
         {
-            --x;
+            //--x;
+            dx = -1;
+	        dy = 0;
         }
         else if (code == 115) // s
         {
-            ++y;
+            //++y;
+            dy = 1;
+	        dx = 0;
         }
         else if (code == 100) // d
         {
-            ++x;
+            //++x;
+            dx = 1;
+	        dy = 0;
         }
+
+        x = x + dx;
+	    y = y + dy;
 
         if (x == apple_x && y == apple_y)
         {
