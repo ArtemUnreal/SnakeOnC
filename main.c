@@ -16,6 +16,7 @@ int size_y;
 
 int* snake_x;
 int* snake_y;
+
 int x = 15;
 int y = 15;
 
